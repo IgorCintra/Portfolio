@@ -261,7 +261,7 @@ main .sobre {
         display: none;
     }
 
-    .section-div{
+    .section-div{ 
         background-image: url(images/foto.png);
         background-repeat: no-repeat;
         background-size: cover;        
@@ -285,4 +285,95 @@ main .sobre {
     .sobre_conteudo{
         grid-column: 1/-1;
     }
+}
+
+.services {
+    background-color: #151515;
+    margin-top: -30px;
+    padding: 60px;
+}
+
+.my_services{
+    color: #fff;
+    padding: 60px;
+}
+
+.my_services ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.my_services ul li{
+    cursor: pointer;
+    border-radius: 6px;
+    position: relative;
+    padding: 10px;
+    display: grid;
+    gap: 30px;
+    text-align: center;
+    align-content: center;
+    max-width: 300px;
+    height: 300px;
+    background-color: #222;
+}
+
+.my_services ul li i{
+    font-size: 3rem;
+    color: #dc3545;
+}
+
+.my_services ul li h3{
+    color: #fff;
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.my_services ul li p{
+    color: #707070;
+    font-size: 1.1rem;
+}
+
+.my_services ul li:before{
+    content: '';
+    transition: .5s ease-in-out;
+    border-radius: 6px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    border-top: 2px solid #dc3545;
+    border-right: 2px solid transparent;
+}
+
+.my_services ul li:after{
+    content: '';
+        transition: .5s ease-in-out;
+
+    border-radius: 6px;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 2px solid #dc3545;
+    border-left: 2px solid transparent;
+}
+
+.my_services li:hover::before{
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #dc3545;
+    border-right: 2px solid #dc3545;
+}
+
+.my_services li:hover::after{
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #dc3545;
+    border-left: 2px solid #dc3545;
 }

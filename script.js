@@ -10,6 +10,7 @@ function escrevendoLetra(){
 }
     const titulo = document.querySelector('.digitando');
     ativaLetra(titulo);
+}
 
 const ativaMenu = document.querySelector('.fa-bars');
 
