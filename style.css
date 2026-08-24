@@ -32,17 +32,35 @@ header span {
     color: #ffffff;
 }
 
-header.nevegacao-primaria {
+header .navegacao-primaria {
     display: flex;
-    gap: 10px;
-    align-items: center
+    gap: 20px;
+    align-items: center;
 }
 
 header .navegacao-primaria li a {
-    padding: 10px;
     color: #ffffff;
+    width: 0px;
+    height: 0px;
     font-size: 1.3 rem;
 }
+
+header .navegacao-primaria li a::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-bottom: 2px solid transparent;
+    transition: .9s ease-in-out;
+}
+
+header .navegacao-primaria li a:hover::after {
+    width: 100%;
+    height: 0px;
+    padding: 0px;
+    border-bottom: 4px solid #dc3545;
+}
+
 
 .section-div {
     animation: inicializar .7s forwards;
@@ -133,7 +151,7 @@ main .sobre {
     margin: 30px 0;
     grid-column: 1/-1;
     text-align: center;
-    color:#ffffff
+    color:#ffffff;
 }
 
 .sobre_titulo h1 {
@@ -267,6 +285,11 @@ main .sobre {
         background-size: cover;        
     }
 
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+
     header .navegacao-primaria{
         display: none;
     }
@@ -274,6 +297,21 @@ main .sobre {
     header i {
         color: #f7f7f7;
         font-size: 3rem;
+    }
+
+    header .navegacao-primaria.ativado{
+        background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: white;
+        z-index: 5;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0px 0px 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
     }
 }
 
