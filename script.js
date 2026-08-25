@@ -20,7 +20,8 @@ function menuMobol(){
     const navMenu = document.querySelector('.navegacao-primaria');
 
     ativaMenu.addEventListener('click', ()=>{
-        ativaMenu.classList.toggle('.fa-x');
+        ativaMenu.classList.toggle('fa-bars');
+        ativaMenu.classList.toggle('fa-x');
         navMenu.classList.toggle('ativado');
     });
 }
@@ -72,3 +73,4 @@ function sobreMim(){
 }
 
 sobreMim();
+menuMobol();
