@@ -141,7 +141,7 @@ main {
 main .sobre {
     margin-top: 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1f;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
     justify-content: center;
     padding: 40px;
@@ -384,7 +384,7 @@ main .sobre {
     position: absolute;
     top: -2px;
     right: -2px;
-    border-top: 2px solid #dc3545;
+    border-top: 2px solid transparent;
     border-right: 2px solid transparent;
 }
 
@@ -398,7 +398,7 @@ main .sobre {
     position: absolute;
     bottom: -2px;
     left: -2px;
-    border-bottom: 2px solid #dc3545;
+    border-bottom: 2px solid transparent;
     border-left: 2px solid transparent;
 }
 
@@ -730,8 +730,14 @@ main .sobre {
     font-family: 'Poppins';
     background-color: #222;
     border: 1px solid #333;
-    padding: 0px 20px;
+    padding: 6px 20px;
     color:#707070;
+}
+
+.projects_models ul li.ativo {
+    background-color: #dc3545;
+    color: #151515;
+    font-weight: bold;
 }
 
 .projects_armazenamento ul {
@@ -743,8 +749,15 @@ main .sobre {
 }
 
 .projects_armazenamento ul li {
+    display: none;
     max-width: 100%;
     height: 100%;
+}
+
+.projects_armazenamento ul li.ativo {
+    display: block;
+    animation: animationImagemButton 2s ease-in-out forwards;
+
 }
 
 .projects_armazenamento ul li img {
@@ -762,4 +775,15 @@ main .sobre {
     border: 1px solid #333;
     color:#707070;
     text-align: center;
+}
+
+@keyframes animationImagemButton {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }

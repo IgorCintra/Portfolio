@@ -26,6 +26,8 @@ function menuMobol(){
     });
 }
 
+menuMobol();
+
 function sobreMim(){
     const divExperiencia = document.querySelectorAll('.experience_content div');
     const liExperiencia = document.querySelectorAll('.experience_content ul li');
@@ -73,4 +75,28 @@ function sobreMim(){
 }
 
 sobreMim();
-menuMobol();
+
+const listaAll = document.querySelector('.projects_armazenamento ul li');
+function filtroProjetos(){
+    const botoes = document.querySelectorAll('.projects_models ul li');
+    const projetos = document.querySelectorAll('.projects_armazenamento ul li');
+
+    function filtrar(categoria){
+        projetos.forEach((projeto)=>{
+            const mostrar = categoria === 'all' || projeto.dataset.category === categoria;
+            projeto.classList.toggle('ativo', mostrar);
+        });
+    }
+
+    botoes.forEach((botao)=>{
+        botao.addEventListener('click', ()=>{
+            botoes.forEach((b)=> b.classList.remove('ativo'));
+            botao.classList.add('ativo');
+            filtrar(botao.dataset.filter);
+        });
+    });
+
+    filtrar('all'); // mostra todos ao carregar a página
+}
+
+filtroProjetos();
