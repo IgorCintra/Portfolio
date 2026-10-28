@@ -24,6 +24,14 @@ function menuMobol(){
         ativaMenu.classList.toggle('fa-x');
         navMenu.classList.toggle('ativado');
     });
+
+    navMenu.querySelectorAll('a').forEach((link)=>{
+    link.addEventListener('click', ()=>{
+        navMenu.classList.remove('ativado');
+        ativaMenu.classList.add('fa-bars');
+        ativaMenu.classList.remove('fa-x');
+        });
+    });
 }
 
 menuMobol();

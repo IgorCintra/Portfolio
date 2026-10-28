@@ -9,6 +9,16 @@
     text-decoration: none;
 }
 
+html {
+    scroll-padding-top: 80px;
+}
+
+@media (max-width: 992px) {
+    html {
+        scroll-padding-top: 110px;
+    }
+}
+
 body {
     background-color: black;
     max-width: 1920px;
@@ -16,6 +26,9 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background-color: black;
     padding: 0px;
     display: flex;
@@ -92,7 +105,7 @@ header .navegacao-primaria li a:hover::after {
     color: #f7f7f7;
 }
 
-.selection-div div a {
+.section-div div a {
     justify-self: start;
     color: #ffffff;
     padding: 15px 40px;
@@ -274,15 +287,29 @@ main .sobre {
     }
 }
 
-@media(max-width: 992px){
-    .section-div img{
-        display: none;
+@media (max-width: 992px) {
+    .section-div {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 20px;
+        background-image: none;
     }
 
-    .section-div{ 
-        background-image: url(images/foto.png);
-        background-repeat: no-repeat;
-        background-size: cover;        
+    .section-div img {
+        display: block;
+        order: -1;
+        justify-self: center;
+        width: min(70%, 280px);
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+    }
+
+    .section-div div {
+        margin-top: 0;
+        text-align: center;
+        justify-items: center;
     }
 
     header {
@@ -303,7 +330,7 @@ main .sobre {
         background: linear-gradient(rgba(43, 42, 42, 0.176), rgba(46, 46, 46, 0.724));
         position: absolute;
         display: grid;
-        top: 80px;
+        top: 100%;
         color: white;
         z-index: 5;
         padding: 30px;
