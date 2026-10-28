@@ -84,27 +84,35 @@ function sobreMim(){
 
 sobreMim();
 
-const listaAll = document.querySelector('.projects_armazenamento ul li');
 function filtroProjetos(){
     const botoes = document.querySelectorAll('.projects_models ul li');
     const projetos = document.querySelectorAll('.projects_armazenamento ul li');
+    const galeria = document.querySelector('.projects_armazenamento');
 
     function filtrar(categoria){
         projetos.forEach((projeto)=>{
-            const mostrar = categoria === 'all' || projeto.dataset.category === categoria;
-            projeto.classList.toggle('ativo', mostrar);
+            projeto.classList.remove('ativo');
+        });
+
+        void galeria.offsetWidth;
+
+        projetos.forEach((projeto)=>{
+            if (categoria === 'all' || projeto.dataset.category === categoria){
+                projeto.classList.add('ativo');
+            }
         });
     }
 
     botoes.forEach((botao)=>{
         botao.addEventListener('click', ()=>{
+            if (botao.classList.contains('ativo')) return;
             botoes.forEach((b)=> b.classList.remove('ativo'));
             botao.classList.add('ativo');
             filtrar(botao.dataset.filter);
         });
     });
 
-    filtrar('all'); // mostra todos ao carregar a página
+    filtrar('all');
 }
 
 filtroProjetos();
