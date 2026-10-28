@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:Ital,wght@0,200;');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
 * {
@@ -786,4 +786,60 @@ main .sobre {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
+}
+
+footer {
+    background-color: #000000;
+    padding: 30px;
+}
+
+.footer_sociais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    color: #f7f7f7
+}
+
+.footer_sociais li {
+    background-color: #212020;
+    border-radius: 50%;
+    border: 1px solid #333;
+}
+
+.footer_sociais li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+}
+
+.footer_sociais li i {
+    font-size: 1.5rem;
+    color: #f7f7f7;
+}
+
+.footer_sociais li:hover {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    background-color: #3e3d3d;
+}
+
+.footer_sociais li::before {
+    content: '';
+    height: 5px;
+    width: 200px;
+    position: absolute;
+    bottom: -30px;
+}
+
+footer .footer_comercial {
+    color: #ffff;
+    text-align: center;
+    margin: 60px 0 0;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
 }
