@@ -116,3 +116,42 @@ function filtroProjetos(){
 }
 
 filtroProjetos();
+
+function tooltipProjetos(){
+    const tooltip = document.querySelector('#tooltip-projeto');
+    const galeria = document.querySelector('.projects_armazenamento');
+    const deslocamento = 16;
+
+    galeria.addEventListener('mouseover', (e)=>{
+        const projeto = e.target.closest('li[data-descricao]');
+        if (!projeto) return;
+        tooltip.textContent = projeto.dataset.descricao;
+        tooltip.classList.add('visivel');
+    });
+
+    galeria.addEventListener('mousemove', (e)=>{
+        let x = e.clientX + deslocamento;
+        let y = e.clientY + deslocamento;
+
+        const largura = tooltip.offsetWidth;
+        const altura = tooltip.offsetHeight;
+
+        if (x + largura > window.innerWidth){
+            x = e.clientX - largura - deslocamento;
+        }
+        if (y + altura > window.innerHeight){
+            y = e.clientY - altura - deslocamento;
+        }
+
+        tooltip.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    galeria.addEventListener('mouseout', (e)=>{
+        const projeto = e.target.closest('li[data-descricao]');
+        if (!projeto) return;
+        if (projeto.contains(e.relatedTarget)) return;
+        tooltip.classList.remove('visivel');
+    });
+}
+
+tooltipProjetos();

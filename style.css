@@ -304,6 +304,11 @@ main .sobre {
 }
 
 @media (max-width: 992px) {
+
+    .section-div div a {
+        justify-self: center;
+    }
+
     .section-div {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -892,4 +897,33 @@ footer .footer_comercial {
     margin: 60px 0 0;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
+}
+
+#tooltip-projeto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 260px;
+    padding: 10px 14px;
+    background-color: #222;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    color: #f7f7f7;
+    font-family: 'Poppins';
+    font-size: 0.85rem;
+    line-height: 1.4;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+#tooltip-projeto.visivel {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    #tooltip-projeto {
+        display: none;
+    }
 }
