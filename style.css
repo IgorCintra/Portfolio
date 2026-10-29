@@ -10,6 +10,7 @@
 }
 
 html {
+    background-color: #000;
     scroll-padding-top: 80px;
     scroll-padding-top: var(--altura-header);
 }
@@ -30,7 +31,7 @@ html {
 
 @media (max-width: 992px) {
     :root {
-        --altura-header: 108px;
+        --altura-header: 108px; /* no mobile o header é mais alto; meça também */
     }
 }
 
@@ -218,7 +219,10 @@ main .sobre {
     grid-row: 2;
     grid-column: 1;
     height: 600px;
+    width: 100%;
     max-width: 100%;
+    object-fit: cover;
+    object-position: top center;
     filter:blur(0);
 }
 
@@ -811,6 +815,7 @@ main .sobre {
 
 .projects_armazenamento ul li img {
     display: block;
+    width: 100%;
     max-width: 100%;
     height: 100%;
     border-radius: 4px;
@@ -892,4 +897,296 @@ footer .footer_comercial {
     margin: 60px 0 0;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================================
+   TOOLTIP DOS PROJETOS
+   ============================================================ */
+#tooltip-projeto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 260px;
+    padding: 10px 14px;
+    background-color: #222;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    color: #f7f7f7;
+    font-family: 'Poppins';
+    font-size: 0.85rem;
+    line-height: 1.4;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+#tooltip-projeto.visivel {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    #tooltip-projeto {
+        display: none;
+    }
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   Breakpoints: 1200px (notebook) | 992px (tablet paisagem)
+                768px (tablet retrato) | 576px (celular) | 480px (celular pequeno)
+   ============================================================ */
+
+/* Impede que as animações de entrada (translate) criem barra horizontal */
+main, #resume, .services, .projects, .section-div {
+    overflow-x: clip;
+}
+
+.sobre_info p {
+    overflow-wrap: anywhere;
+}
+
+.projects_models ul {
+    flex-wrap: wrap;
+}
+
+/* ---------- Notebooks pequenos / desktops estreitos ---------- */
+@media (max-width: 1200px) {
+    .section-div {
+        padding: 40px;
+        gap: 40px;
+    }
+
+    main .sobre {
+        padding: 30px;
+    }
+
+    .sobre img {
+        height: 520px;
+    }
+
+    .sobre_texto p {
+        font-size: 1.15rem;
+    }
+
+    .projects_armazenamento ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* ---------- Tablets (paisagem) ---------- */
+@media (max-width: 992px) {
+    .services {
+        padding: 40px 20px;
+    }
+
+    main .sobre {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .sobre img {
+        width: min(100%, 420px);
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .sobre_titulo h1 {
+        font-size: 2.2rem;
+    }
+
+    .resume_geral {
+        padding: 20px;
+    }
+
+    .cursos {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .funfact ul {
+        justify-content: center;
+    }
+
+    .my_services {
+        padding: 30px 20px;
+    }
+
+    .my_services ul li {
+        height: auto;
+        min-height: 260px;
+        padding: 24px 16px;
+    }
+}
+
+/* ---------- Tablets (retrato) ---------- */
+@media (max-width: 768px) {
+    .section-div div h2 {
+        font-size: 1.3rem;
+    }
+
+    .section-div div p {
+        font-size: 0.95rem;
+    }
+
+    .sobre_texto p {
+        font-size: 1.05rem;
+    }
+
+    .resume_geral .experience_content div,
+    .resume_geral .education_content div {
+        padding: 30px 24px;
+    }
+
+    .projects {
+        padding: 20px 16px;
+    }
+
+    .projects_armazenamento ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 30px;
+    }
+
+    .projects_models ul {
+        gap: 10px;
+    }
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 576px) {
+    header {
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header .navegacao-primaria.ativado {
+        right: 12px;
+        padding: 20px;
+        font-size: 1.3rem;
+    }
+
+    .section-div {
+        padding: 24px 16px;
+    }
+
+    .section-div img {
+        width: min(60%, 220px);
+    }
+
+    .section-div div a {
+        padding: 12px 28px;
+    }
+
+    .sobre_titulo {
+        margin: 20px 0;
+    }
+
+    .sobre_titulo h1 {
+        font-size: 1.9rem;
+    }
+
+    .sobre_titulo p {
+        font-size: 1.1rem;
+    }
+
+    .sobre_titulo span {
+        width: 14px;
+        height: 14px;
+    }
+
+    main .sobre {
+        padding: 16px;
+        margin-top: 30px;
+    }
+
+    .sobre_texto h1 {
+        font-size: 1.8rem;
+    }
+
+    .sobre_texto p {
+        font-size: 1rem;
+    }
+
+    .sobre_info {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        padding: 30px 16px;
+    }
+
+    .resume_geral {
+        padding: 16px;
+    }
+
+    .resume_geral h2,
+    .my_skill h2,
+    .funfact h2 {
+        font-size: 1.2rem;
+    }
+
+    .resume_geral .experience_content div,
+    .resume_geral .education_content div {
+        padding: 24px 18px;
+    }
+
+    .cursos {
+        padding: 16px;
+    }
+
+    .skill_content {
+        gap: 20px;
+    }
+
+    .skill_content h3 {
+        font-size: 1.1rem;
+    }
+
+    .funfact ul {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 20px;
+    }
+
+    .funfact ul li {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .projects > a {
+        padding: 16px 20px;
+    }
+
+    .projects_models ul li {
+        padding: 6px 14px;
+    }
+
+    footer {
+        padding: 24px 16px;
+    }
+
+    .footer_sociais {
+        gap: 20px;
+    }
+
+    .footer_sociais li a {
+        width: 64px;
+        height: 64px;
+    }
+
+    footer .footer_comercial {
+        margin-top: 30px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ---------- Celulares pequenos ---------- */
+@media (max-width: 480px) {
+    .projects_armazenamento ul {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
