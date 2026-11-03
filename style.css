@@ -899,9 +899,6 @@ footer .footer_comercial {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ============================================================
-   TOOLTIP DOS PROJETOS
-   ============================================================ */
 #tooltip-projeto {
     position: fixed;
     top: 0;
@@ -931,11 +928,7 @@ footer .footer_comercial {
     }
 }
 
-/* ============================================================
-   RESPONSIVIDADE
-   Breakpoints: 1200px (notebook) | 992px (tablet paisagem)
-                768px (tablet retrato) | 576px (celular) | 480px (celular pequeno)
-   ============================================================ */
+/* Breakpoints: 1200px (notebook) | 992px (tablet paisagem) 768px (tablet retrato) | 576px (celular) | 480px (celular pequeno)*/
 
 /* Impede que as animações de entrada (translate) criem barra horizontal */
 main, #resume, .services, .projects, .section-div {
@@ -950,7 +943,6 @@ main, #resume, .services, .projects, .section-div {
     flex-wrap: wrap;
 }
 
-/* ---------- Notebooks pequenos / desktops estreitos ---------- */
 @media (max-width: 1200px) {
     .section-div {
         padding: 40px;
@@ -974,7 +966,6 @@ main, #resume, .services, .projects, .section-div {
     }
 }
 
-/* ---------- Tablets (paisagem) ---------- */
 @media (max-width: 992px) {
     .services {
         padding: 40px 20px;
@@ -1019,7 +1010,6 @@ main, #resume, .services, .projects, .section-div {
     }
 }
 
-/* ---------- Tablets (retrato) ---------- */
 @media (max-width: 768px) {
     .section-div div h2 {
         font-size: 1.3rem;
@@ -1053,7 +1043,6 @@ main, #resume, .services, .projects, .section-div {
     }
 }
 
-/* ---------- Celulares ---------- */
 @media (max-width: 576px) {
     header {
         padding: 30px 20px;
@@ -1184,7 +1173,6 @@ main, #resume, .services, .projects, .section-div {
     }
 }
 
-/* ---------- Celulares pequenos ---------- */
 @media (max-width: 480px) {
     .projects_armazenamento ul {
         grid-template-columns: minmax(0, 1fr);
