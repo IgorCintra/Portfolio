@@ -62,6 +62,11 @@ header span {
     color: #ffffff;
 }
 
+header nav > i.fa-bars,
+header nav > i.fa-x {
+    display: none;
+}
+
 header .navegacao-primaria {
     display: flex;
     gap: 20px;
@@ -349,6 +354,12 @@ main .sobre {
     header i {
         color: #f7f7f7;
         font-size: 3rem;
+    }
+
+    header nav > i.fa-bars,
+    header nav > i.fa-x {
+        display: inline-block;
+        cursor: pointer;
     }
 
     header .navegacao-primaria.ativado{
